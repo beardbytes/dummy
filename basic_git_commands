@@ -1,0 +1,140 @@
+aditya@wOrm29:~/dummy$ git init
+Initialized empty Git repository in /home/aditya/dummy/.git/
+aditya@wOrm29:~/dummy$ git clone https://github.com/maverick12345678/dummy.git
+Cloning into 'dummy'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+aditya@wOrm29:~/dummy$ git remote add origin https://github.com/maverick12345678/dummy.git
+aditya@wOrm29:~/dummy$ git checkout -b feature_x
+Switched to a new branch 'feature_x'
+aditya@wOrm29:~/dummy$ git push origin feature_x
+error: src refspec feature_x does not match any.
+error: failed to push some refs to 'https://github.com/maverick12345678/dummy.git'
+aditya@wOrm29:~/dummy$ git merge master
+merge: master - not something we can merge
+aditya@wOrm29:~/dummy$ git checkout feature_x
+error: pathspec 'feature_x' did not match any file(s) known to git.
+aditya@wOrm29:~/dummy$ git checkout -b feature_x
+Switched to a new branch 'feature_x'
+aditya@wOrm29:~/dummy$ git status
+On branch feature_x
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	dummy/
+
+nothing added to commit but untracked files present (use "git add" to track)
+aditya@wOrm29:~/dummy$ git ststus
+git: 'ststus' is not a git command. See 'git --help'.
+
+The most similar command is
+	status
+aditya@wOrm29:~/dummy$ git status
+On branch feature_x
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	dummy/
+	mongoVspostgres.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+aditya@wOrm29:~/dummy$ git add .
+warning: adding embedded git repository: dummy
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint: 
+hint: 	git submodule add <url> dummy
+hint: 
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint: 
+hint: 	git rm --cached dummy
+hint: 
+hint: See "git help submodule" for more information.
+aditya@wOrm29:~/dummy$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git.
+aditya@wOrm29:~/dummy$ git add *
+aditya@wOrm29:~/dummy$ git commit -m"Commit message"
+[feature_x (root-commit) f2e0d02] Commit message
+ 2 files changed, 11 insertions(+)
+ create mode 160000 dummy
+ create mode 100644 mongoVspostgres.txt
+aditya@wOrm29:~/dummy$ git push origin master
+error: src refspec master does not match any.
+error: failed to push some refs to 'https://github.com/maverick12345678/dummy.git'
+aditya@wOrm29:~/dummy$ git push origin master -f
+error: src refspec master does not match any.
+error: failed to push some refs to 'https://github.com/maverick12345678/dummy.git'
+aditya@wOrm29:~/dummy$ git checkout -b feature_x
+fatal: A branch named 'feature_x' already exists.
+aditya@wOrm29:~/dummy$ git checkout -b feature_y
+Switched to a new branch 'feature_y'
+aditya@wOrm29:~/dummy$ git push origin master -f
+error: src refspec master does not match any.
+error: failed to push some refs to 'https://github.com/maverick12345678/dummy.git'
+aditya@wOrm29:~/dummy$ git push origin feature_y -f
+Username for 'https://github.com': maverick12345678
+Password for 'https://maverick12345678@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 648 bytes | 648.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'feature_y' on GitHub by visiting:
+remote:      https://github.com/maverick12345678/dummy/pull/new/feature_y
+remote: 
+To https://github.com/maverick12345678/dummy.git
+ * [new branch]      feature_y -> feature_y
+aditya@wOrm29:~/dummy$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git.
+aditya@wOrm29:~/dummy$ git checkout -b master
+Switched to a new branch 'master'
+aditya@wOrm29:~/dummy$ git branch -d feature_x
+Deleted branch feature_x (was f2e0d02).
+aditya@wOrm29:~/dummy$ git merge feature_y
+Already up to date.
+aditya@wOrm29:~/dummy$ git add mongoVspostgres.txt
+aditya@wOrm29:~/dummy$ git diff feature_y master
+aditya@wOrm29:~/dummy$ git branch -d dummy
+error: branch 'dummy' not found.
+aditya@wOrm29:~/dummy$ git checkout mongoVspostgres.txt
+aditya@wOrm29:~/dummy$ git fetch origin
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/maverick12345678/dummy
+ * [new branch]      dummy      -> origin/dummy
+ * [new branch]      master     -> origin/master
+aditya@wOrm29:~/dummy$ git reset --hard origin/master
+warning: unable to rmdir 'dummy': Directory not empty
+HEAD is now at 9bbec0c Initial commit
+aditya@wOrm29:~/dummy$ git config format.pretty oneline
+aditya@wOrm29:~/dummy$ git add -i
+
+*** Commands ***
+  1: status	  2: update	  3: revert	  4: add untracked
+  5: patch	  6: diff	  7: quit	  8: help
+What now> 1
+
+*** Commands ***
+  1: status	  2: update	  3: revert	  4: add untracked
+  5: patch	  6: diff	  7: quit	  8: help
+What now> 2
+*** Commands ***
+  1: status	  2: update	  3: revert	  4: add untracked
+  5: patch	  6: diff	  7: quit	  8: help
+What now> 7
+Bye.
+
