@@ -1,0 +1,10 @@
+
+		  Proposal To Move An Existing Database Of An Existing Webservices From Mongodb To Postgres
+
+
+PostgreSQL has a strongly typed schema that leaves very little room for errors . We can change the tables in PostgreSQL without requiring to lock it for operation . Postgres also supports JSONB, which lets you create unstructured data. The biggest advantage and disadvantage of Mongo is that it has flexible schema . There is no strict schema .
+
+Postgres is convenient and supports transactions. Postgres is faster in sorting. Mongo is flexible and in-consistent performance . Insertion is faster in MongoDB . MongoDB rocks in joins and updating. Postgres has to check foreign key constraints. 
+
+
+
